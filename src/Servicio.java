@@ -1,4 +1,4 @@
 public interface Servicio {
 
-    public void cobrar(Usuario HVO_plan);
+    public void cobrar(Usuario usuario);
 }

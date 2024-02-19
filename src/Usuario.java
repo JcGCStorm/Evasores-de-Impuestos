@@ -2,12 +2,22 @@ public class Usuario {
  
     String nombre;
     double dinero;
-    int   HVO_plan;
+    int planHVO;
+    int planMemeflix;
+    int planMomazon;
+    int planSpootify;
 
-    public Usuario(String nombre,  double dinero, int HVO_plan){
-        this.nombre = nombre;
-        this.dinero = dinero;
-        this.HVO_plan = HVO_plan;
+    public Usuario(String nombre,  double dinero, 
+                    int planHVO,
+                    int planMemeflix,
+                    int planMomazon,
+                    int planSpootify){
+        this.nombre       =  nombre;
+        this.dinero       =  dinero;
+        this.planHVO      = planHVO;
+        this.planMemeflix = planMemeflix;
+        this.planMomazon  = planMomazon;
+        this.planSpootify = planSpootify;
     }
 
     public String getNombre() {
@@ -26,11 +36,35 @@ public class Usuario {
         this.dinero = dinero;       
     }
 
-    public int getHVO_Plan(){
-        return HVO_plan;
+    public int getPlanHVO(){
+        return planHVO;      
     }
 
-    public void setHVO_Plan(int HVO_plan){
-        this.HVO_plan = HVO_plan;
+    public void setPlanHVO(int planHVO){
+        this.planHVO = planHVO;
+    }
+
+    public int getPlanMemeflix(){
+        return planMemeflix;      
+    }
+
+    public void setPlanMemeflix(int planMemeflix){
+        this.planMemeflix = planMemeflix;
+    }
+
+    public int getPlanMomazon(){
+        return planMomazon;      
+    }
+
+    public void setPlanMomazon(int planMomazon){
+        this.planMomazon = planMomazon;
+    }
+
+    public int getPlanSpootify(){
+        return planSpootify;      
+    }
+
+    public void setPlanSpootify(int planSpootify){
+        this.planSpootify = planSpootify;
     }
 }
