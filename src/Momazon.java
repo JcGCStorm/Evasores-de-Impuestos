@@ -1,10 +1,21 @@
 public class Momazon implements Servicio {
+
+   /*
+    * Usamos como atributos de la clase los planes disponibles
+    * Según las especificaciones de la práctica, en este caso son:
+    */
     public double planNormal  = 110.0;
     public double planPremium = 150.0;
 
+    /**
+    * Implementación de la clase Momazon que sobre escribe al metodo 
+    * {@Link #cobrar} y lo implementa según el plan que el usuario elija
+    * Este metodo obtiene el plan del usuario, se cobra dependiendo de dicho plan
+    * @param usuario el usuario al que se le está cobrando el servicio.
+    */
     @Override
     public void cobrar(Usuario usuario){ 
-        switch(usuario.obtenerPlan(4)){ 
+        switch(usuario.obtenerPlan(2)){ 
           case 1:
              usuario.setDinero(usuario.getDinero() - planNormal);
              System.out.println("Se cobró su membresia para un dispositivo\n Precio:" +planNormal +
