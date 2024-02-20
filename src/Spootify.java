@@ -4,7 +4,7 @@ public class Spootify implements Servicio{
 
     @Override
     public void cobrar(Usuario usuario){ 
-        switch(usuario.getPlanSpootify()){ 
+        switch(usuario.obtenerPlan(5)){ 
           case 1:
              usuario.setDinero(usuario.getDinero() - planGratuito);
              System.out.println("Su plan es gratuito pero con anuncios" +

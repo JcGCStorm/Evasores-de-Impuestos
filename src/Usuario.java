@@ -2,22 +2,14 @@ public class Usuario {
  
     String nombre;
     double dinero;
-    int planHVO;
-    int planMemeflix;
-    int planMomazon;
-    int planSpootify;
+    int     meses;
+    int[]   plan;
 
-    public Usuario(String nombre,  double dinero, 
-                    int planHVO,
-                    int planMemeflix,
-                    int planMomazon,
-                    int planSpootify){
-        this.nombre       =  nombre;
-        this.dinero       =  dinero;
-        this.planHVO      = planHVO;
-        this.planMemeflix = planMemeflix;
-        this.planMomazon  = planMomazon;
-        this.planSpootify = planSpootify;
+    public Usuario(String nombre,  double dinero, int meses, int[] plan ){
+        this.nombre = nombre;
+        this.dinero = dinero;
+        this.meses =  meses;
+      this.plan = new int[6];
     }
 
     public String getNombre() {
@@ -36,35 +28,29 @@ public class Usuario {
         this.dinero = dinero;       
     }
 
-    public int getPlanHVO(){
-        return planHVO;      
+    public int getMeses(){
+        return meses;
     }
 
-    public void setPlanHVO(int planHVO){
-        this.planHVO = planHVO;
+    public void setMeses(int meses){
+        this.meses = meses;
     }
 
-    public int getPlanMemeflix(){
-        return planMemeflix;      
+    
+    public int obtenerPlan(int indice){
+        if (indice >= 0 && indice < plan.length){
+            return plan[indice];
+        } else {
+          System.out.println("El indice no es valido");
+          return -1;
+        }
     }
 
-    public void setPlanMemeflix(int planMemeflix){
-        this.planMemeflix = planMemeflix;
-    }
-
-    public int getPlanMomazon(){
-        return planMomazon;      
-    }
-
-    public void setPlanMomazon(int planMomazon){
-        this.planMomazon = planMomazon;
-    }
-
-    public int getPlanSpootify(){
-        return planSpootify;      
-    }
-
-    public void setPlanSpootify(int planSpootify){
-        this.planSpootify = planSpootify;
+    public void cambiarPlan(int indice, int valor){
+     if (indice >= 0 && indice < plan.length) {
+       plan[indice] = valor;
+   } else {
+       System.out.println("Índice inválido");
+      } 
     }
 }

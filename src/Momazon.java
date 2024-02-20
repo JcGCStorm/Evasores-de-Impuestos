@@ -4,7 +4,7 @@ public class Momazon implements Servicio {
 
     @Override
     public void cobrar(Usuario usuario){ 
-        switch(usuario.getPlanMomazon()){ 
+        switch(usuario.obtenerPlan(4)){ 
           case 1:
              usuario.setDinero(usuario.getDinero() - planNormal);
              System.out.println("Se cobró su membresia para un dispositivo\n Precio:" +planNormal +
