@@ -2,12 +2,14 @@ public class Usuario {
  
     String nombre;
     double dinero;
-    int   HVO_plan;
+    int     meses;
+    int[]   plan;
 
-    public Usuario(String nombre,  double dinero, int HVO_plan){
+    public Usuario(String nombre,  double dinero, int meses, int[] plan ){
         this.nombre = nombre;
         this.dinero = dinero;
-        this.HVO_plan = HVO_plan;
+        this.meses =  meses;
+      this.plan = new int[6];
     }
 
     public String getNombre() {
@@ -26,11 +28,29 @@ public class Usuario {
         this.dinero = dinero;       
     }
 
-    public int getHVO_Plan(){
-        return HVO_plan;
+    public int getMeses(){
+        return meses;
     }
 
-    public void setHVO_Plan(int HVO_plan){
-        this.HVO_plan = HVO_plan;
+    public void setMeses(int meses){
+        this.meses = meses;
+    }
+
+    
+    public int obtenerPlan(int indice){
+        if (indice >= 0 && indice < plan.length){
+            return plan[indice];
+        } else {
+          System.out.println("El indice no es valido");
+          return -1;
+        }
+    }
+
+    public void cambiarPlan(int indice, int valor){
+     if (indice >= 0 && indice < plan.length) {
+       plan[indice] = valor;
+   } else {
+       System.out.println("Índice inválido");
+      } 
     }
 }
