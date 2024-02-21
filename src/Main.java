@@ -18,22 +18,22 @@ public class Main {
           int planMomazon = 2;  
         Spootify spootify = new Spootify();
           int planSpootify = 3;
-       Usuario alicia = new Usuario("Alicia", 15000.00, 0, new int[]{0,0,0,0,0});
+       Usuario alicia = new Usuario("Alicia", 15000.00, 0, new int[]{0,0,0,0,0}, new MemeflixPaqueteCuatro());
 
        /**
         * Estp es solo de prueba, luego lo acomodamos
         */
        System.out.println(alicia.getDinero());
-      alicia.cambiarPlan(planHVO, 2);
+       System.out.println(alicia.getPlan());
     hvo.cobrar(alicia);
       alicia.cambiarPlan(planMemeflix, 3);
-    memeflix.cobrar(alicia);  
-      alicia.cambiarPlan(planMomazon, 2);
+     alicia.cambiarPlan(planMomazon, 2);
     momazon.cobrar(alicia);
       alicia.cambiarPlan(planSpootify, 2);  
     spootify.cobrar(alicia);
     spootify.cobrar(alicia);
       alicia.cambiarPlan(planHVO, 1);
     hvo.cobrar(alicia);
+    memeflix.cobrar(alicia); 
         }
 }

@@ -1,4 +1,4 @@
-public class Spootify implements Servicio{
+public class Spootify implements MemeflixCobrador{
 
    /*
     * Usamos como atributos de la clase los planes disponibles

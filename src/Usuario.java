@@ -10,6 +10,7 @@ public class Usuario {
     double dinero;
     int     meses;
     int[]   plan;
+    MemeflixCobrador planMeme;
 
     /**
      * Constructor del Usuario.
@@ -19,11 +20,12 @@ public class Usuario {
      * @param plan
      */
 
-    public Usuario(String nombre,  double dinero, int meses, int[] plan ){
+    public Usuario(String nombre,  double dinero, int meses, int[] plan, MemeflixCobrador planMeme ){
         this.nombre = nombre;
         this.dinero = dinero;
         this.meses =  meses;
       this.plan = new int[5];
+      this.planMeme = planMeme;
     }
 
     /**
@@ -75,6 +77,10 @@ public class Usuario {
         this.meses = meses;
     }
 
+
+    public MemeflixCobrador getPlan(){
+        return planMeme;
+    }
 
     /**
      * Metodo que obtiene el plan contratado por el usuario, solo erecorre el arreglo hasta llegar al 
