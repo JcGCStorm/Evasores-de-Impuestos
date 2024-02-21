@@ -1,18 +1,19 @@
-public class Memeflix extends Servicios{
+public class Memeflix extends Servicios {
 
-     /**
-    * Implementación de la clase Memeflix que sobre escribe al metodo 
-    * {@Link #cobrar} y lo implementa según el plan que el usuario elija
-    * Este metodo obtiene el plan del usuario, se cobra dependiendo de dicho plan
-    * @param usuario el usuario al que se le está cobrando el servicio.
-    */
-    
-    /* Objeto de contexto. */
+  /**
+   * Implementación de la clase Memeflix que sobre escribe al metodo
+   * {@Link #cobrar} y lo implementa según el plan que el usuario elija
+   * Este metodo obtiene el plan del usuario, se cobra dependiendo de dicho plan
+   * 
+   * @param usuario el usuario al que se le está cobrando el servicio.
+   */
 
-  public void cobrar(Usuario usuario){
-    MemeflixCobrador plan = usuario.getPlan();
-      plan.cobrar(usuario);
-    }
-	}
+  /* Objeto de contexto. */
 
-   // metodos
+  public void cobrar(Usuario usuario) {
+    MemeflixCobrador plan = usuario.getPlanMemeflix();
+    plan.cobrar(usuario);
+  }
+}
+
+// metodos

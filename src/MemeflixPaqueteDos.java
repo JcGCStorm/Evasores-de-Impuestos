@@ -1,10 +1,12 @@
 public class MemeflixPaqueteDos extends Memeflix implements MemeflixCobrador {
  
-    public double plan2Disp = 170.0;
+    public int plan2Disp = 170;
 
     @Override
     public void cobrar(Usuario usuario){
-        usuario.setDinero(usuario.getDinero() - plan2Disp);
+        System.out.println("La suscripciónn de Memeflix para dos dispositivos de ");
+        usuario.realizarPago(plan2Disp);
+        usuario.actualizar();
     }
 
 }
