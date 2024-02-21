@@ -5,7 +5,7 @@
  * similar una con la otra.
  */
 
-public class HVO_MAX implements Servicio {
+public class HVO_MAX implements MemeflixCobrador {
 
    /*
     * Usamos como atributos de la clase los planes disponibles

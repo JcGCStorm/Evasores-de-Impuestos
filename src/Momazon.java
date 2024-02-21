@@ -1,4 +1,4 @@
-public class Momazon implements Servicio {
+public class Momazon implements MemeflixCobrador {
 
    /*
     * Usamos como atributos de la clase los planes disponibles
