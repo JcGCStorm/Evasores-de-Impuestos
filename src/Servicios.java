@@ -3,27 +3,31 @@ import java.util.List;
 
 public class Servicios implements Sujeto{
     Usuario usuario;
-    private List<Observador> observadores = new ArrayList<>();
+	List<Usuario> usuarios = new ArrayList<>();
 
+    public List<Usuario> getUsuarios(){
+		return usuarios;
+	}
 
     // Método para suscribir un observador al cliente
     @Override
-    public void agregar(Observador observador) {
-        observadores.add(observador);
+    public void agregar(Usuario usuario) {
+        usuarios.add(usuario);
     }
+
     
     // Método para cancelar la suscripción
     @Override
-    public void eliminar(Observador observador) {
+    public void eliminar(Usuario usuario) {
         // Lógica para cancelar la suscripción
-        observadores.remove(observador);
+        usuarios.remove(usuario);
         System.out.println(usuario + " ha cancelado su suscripción.");
     }
 
     @Override
     public void notificar(){
-        for (Observador observador : observadores) {
-            observador.actualizar();
+        for (Usuario usuario : usuarios) {
+            usuario.actualizar();
         }
     }
 }

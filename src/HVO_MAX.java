@@ -1,6 +1,7 @@
 public class HVO_MAX extends Servicios {
 
   String notificacion;
+  HVO_MAXCobrador planHvo; 
 
   /**
    * Implementación de la clase HVO_MAX que sobre escribe al metodo
@@ -9,8 +10,7 @@ public class HVO_MAX extends Servicios {
    * 
    * @param usuario el usuario al que se le está cobrando el servicio.
    */
-
-  /* Objeto de contexto. */
+   
 
   public String getNotificacion(){
 		return notificacion;

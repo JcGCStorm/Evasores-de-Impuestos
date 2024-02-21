@@ -4,10 +4,14 @@
 public class Main {
     public static void main(String[] args){
 
-       Usuario alicia = new Usuario("Alicia", 15000, 1, new MemeflixPaqueteCuatro(), new HVO_MAXPaqueteNormal(),
+       Usuario alicia = new Usuario("Alicia", 15000, new int[]{0,0,0,0,0}, new MemeflixPaqueteCuatro(), new HVO_MAXPaqueteGratis(),
         new MomazonPaquetePremium(), new ThisneyPaqueteNormal(), new SpootifyPaqueteGratis());
        HVO_MAX hvo = new HVO_MAX();
        Memeflix memeflix = new Memeflix();
        hvo.cobrar(alicia);
+       hvo.cobrar(alicia);
+       hvo.cobrar(alicia);
+       hvo.cobrar(alicia);
+
     }
 }

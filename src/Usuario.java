@@ -8,7 +8,7 @@ public class Usuario implements Observador{
  
     String nombre;
     private CuentaBancaria cuenta;
-    int     meses;
+    int[]     meses;
     String notificacion;
     MemeflixCobrador planMeme;
     HVO_MAXCobrador planHvo; 
@@ -23,12 +23,12 @@ public class Usuario implements Observador{
      * @param plan
      */
 
-    public Usuario(String nombre, int saldoInicial, int meses, MemeflixCobrador planMeme, 
+    public Usuario(String nombre, int saldoInicial, int[] meses, MemeflixCobrador planMeme, 
                    HVO_MAXCobrador planHvo, MomazonCobrador planMomazon, ThisneyCobrador planThisney,
                    SpootifyCobrador planSpootify){
         this.nombre = nombre;
         this.cuenta = new CuentaBancaria(saldoInicial);
-        this.meses =  meses;
+        this.meses =  new int[5];
         this.planMeme = planMeme;
         this.planHvo = planHvo;
         this.planMomazon = planMomazon;
@@ -56,16 +56,29 @@ public class Usuario implements Observador{
      * Regresa los meses que lleava usuario
      * @return los mesesddd del usuario;
      */
-    public int getMeses(){
-        return meses;
+
+     public int getMes(int index) {
+        if (index >= 0 && index < meses.length) {
+            return meses[index];
+        } else {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
     }
 
     /**
-     * Define el dinero del Usuario
-     * @param nombre el nuevo nombre del Usuario
+     * Define un valor para los meses del Usuario
+     * @param meses el nuevo nombre del Usuario
      */
-    public void setMeses(int meses){
+    public void setMeses(int[] meses){
         this.meses = meses;
+    }
+
+    public void setMes(int index, int valor) {
+        if (index >= 0 && index < meses.length) {
+            meses[index] = valor;
+        } else {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
     }
 
     @Override
