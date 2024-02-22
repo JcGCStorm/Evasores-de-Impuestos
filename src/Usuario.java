@@ -4,14 +4,17 @@
  * también varia.
  */
 
-public class Usuario {
+public class Usuario implements Observador{
  
     String nombre;
-    double dinero;
-    int     meses;
-    int[]   plan;
+    private CuentaBancaria cuenta;
+    int[]     meses;
+    String notificacion;
     MemeflixCobrador planMeme;
-
+    HVO_MAXCobrador planHvo; 
+    MomazonCobrador planMomazon; 
+    ThisneyCobrador planThisney; 
+    SpootifyCobrador planSpootify;
     /**
      * Constructor del Usuario.
      * @param nombre
@@ -20,14 +23,18 @@ public class Usuario {
      * @param plan
      */
 
-    public Usuario(String nombre,  double dinero, int meses, int[] plan, MemeflixCobrador planMeme ){
+    public Usuario(String nombre, int saldoInicial, int[] meses, MemeflixCobrador planMeme, 
+                   HVO_MAXCobrador planHvo, MomazonCobrador planMomazon, ThisneyCobrador planThisney,
+                   SpootifyCobrador planSpootify){
         this.nombre = nombre;
-        this.dinero = dinero;
-        this.meses =  meses;
-      this.plan = new int[5];
-      this.planMeme = planMeme;
+        this.cuenta = new CuentaBancaria(saldoInicial);
+        this.meses =  new int[5];
+        this.planMeme = planMeme;
+        this.planHvo = planHvo;
+        this.planMomazon = planMomazon;
+        this.planSpootify = planSpootify;
+        this.planThisney = planThisney;
     }
-
     /**
      * Regresa el nombre del usuario
      * @return el nombre del usuario;
@@ -45,68 +52,77 @@ public class Usuario {
     }
 
     /**
-     * Regresa el dinero del usuario
-     * @return el nombre del usuario;
-     */
-    public double getDinero(){
-        return dinero;
-    }
-
-     /**
-     * Define el dinero del Usuario
-     * @param nombre el nuevo nombre del Usuario
-     */
-    public void setDinero(double dinero){
-        this.dinero = dinero;       
-    }
-
-
-    /**
      * Regresa los meses que lleava usuario
      * @return los mesesddd del usuario;
      */
-    public int getMeses(){
-        return meses;
-    }
 
-    /**
-     * Define el dinero del Usuario
-     * @param nombre el nuevo nombre del Usuario
-     */
-    public void setMeses(int meses){
-        this.meses = meses;
-    }
-
-
-    public MemeflixCobrador getPlan(){
-        return planMeme;
-    }
-
-    /**
-     * Metodo que obtiene el plan contratado por el usuario, solo erecorre el arreglo hasta llegar al 
-     * valor deseado.
-     * @param indice
-     * @return
-     */
-    public int obtenerPlan(int indice){
-        if (indice >= 0 && indice < plan.length){
-            return plan[indice];
+     public int getMes(int index) {
+        if (index >= 0 && index < meses.length) {
+            return meses[index];
         } else {
-          System.out.println("El indice no es valido");
-          return -1;
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
         }
     }
 
     /**
-     * Metodo que cambia el plan del usuario
-     * @param indice
-     * @param valor
+     * Define un valor para los meses del Usuario
+     * @param meses el nuevo nombre del Usuario
      */
-    public void cambiarPlan(int indice, int valor){
-     if (indice >= 0 && indice < plan.length) {
-       plan[indice] = valor;
-   } else {
-       System.out.println("Índice inválido");
-      } 
+    public void setMeses(int[] meses){
+        this.meses = meses;
     }
+
+    public void setMes(int index, int valor) {
+        if (index >= 0 && index < meses.length) {
+            meses[index] = valor;
+        } else {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
+    }
+
+    @Override
+    public void actualizar() {
+  //      notificacion = planHvo.getNotificacion();
+//	verNoticia();
+        }
+
+ //   public void verNoticia(){
+  //      System.out.println("Querid@: " + nombre 
+  //         + "\nSu suscripción de: " + getPlanHvo_MAX()
+   //        + "\n: \n" 
+   //        + notificacion);
+    //    }    
+
+    // Método para realizar un pago mensual y actualizar el saldo
+    public void realizarPago(int monto) {
+        cuenta.realizarPago(monto);
+        System.out.println(nombre + " fué pagada con exito, se cobró un total de $" + monto + ". \nSaldo restante: $" + cuenta.getSaldo());
+    }
+
+    // Método para cambiar la versión de la suscripción
+    public void cambiarVersion() {
+        System.out.println(nombre + " ha cambiado la versión de su suscripción.");
+    }
+
+    public MemeflixCobrador getPlanMemeflix(){
+        return planMeme;
+    }
+
+    public MomazonCobrador getPlanMomazon(){
+        return planMomazon;
+    }
+
+    public SpootifyCobrador getPlanSpootify(){
+        return planSpootify;
+    }
+
+    public ThisneyCobrador getPlanThisney(){
+        return planThisney;
+    }
+
+    public HVO_MAXCobrador getPlanHvo_MAX(){
+        return planHvo;
+    }
+
+
 }

@@ -4,36 +4,17 @@
 public class Main {
     public static void main(String[] args){
 
-        /**
-         * Creamos objetos del tipo de cada clase de los servicios y 1 del usuario
-         * Además de instanciar valores para guardar en el arreglo del usuario, dicho
-         * número nos va a ser de utilidad pues nos indica el plan que tiene el usuario
-         * contratado.
-         */
-        HVO_MAX hvo = new HVO_MAX();
-          int planHVO = 0;
-        Memeflix memeflix = new Memeflix();
-          int planMemeflix = 1;
-        Momazon momazon = new Momazon();
-          int planMomazon = 2;  
-        Spootify spootify = new Spootify();
-          int planSpootify = 3;
-       Usuario alicia = new Usuario("Alicia", 15000.00, 0, new int[]{0,0,0,0,0}, new MemeflixPaqueteCuatro());
+       Usuario alicia = new Usuario("Alicia", 15000, new int[]{0,0,0,0,0}, 
+                new MemeflixPaqueteCuatro(), new HVO_MAXPaqueteGratis(), new MomazonPaquetePremium(), 
+                new ThisneyPaqueteNormal(), new SpootifyPaqueteGratis());
+            alicia.agregar();
+       Usuario bob = new Usuario("Bob", 2400, new int[]{0,0,0,0,0}, 
+                 new MemeflixPaqueteCuatro(), new HVO_MAXPaqueteNormal(), new MomazonPaquetePremium(),
+                 new ThisneyPaqueteNormal(), new SpootifyPaquetePremium());
+     //   Usuario cesar = new Usuario("César", 5000, new int[]{0,0,0,0,0}, new HVO_MAXPaqueteNormal(), null, new ThisneyPaqueteNormal(), 
+       //                    SinPlan, null);
+      HVO_MAX hvo = new HVO_MAX();
+    alicia.cobrar();
 
-       /**
-        * Estp es solo de prueba, luego lo acomodamos
-        */
-       System.out.println(alicia.getDinero());
-       System.out.println(alicia.getPlan());
-    hvo.cobrar(alicia);
-      alicia.cambiarPlan(planMemeflix, 3);
-     alicia.cambiarPlan(planMomazon, 2);
-    momazon.cobrar(alicia);
-      alicia.cambiarPlan(planSpootify, 2);  
-    spootify.cobrar(alicia);
-    spootify.cobrar(alicia);
-      alicia.cambiarPlan(planHVO, 1);
-    hvo.cobrar(alicia);
-    memeflix.cobrar(alicia); 
-        }
+    }
 }

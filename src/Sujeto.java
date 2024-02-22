@@ -10,13 +10,13 @@ public interface Sujeto {
      * Agregar un observador al sujeto
      * @param observador el observador a agregar. 
      */
-    public void agregar(Observador observador);
+    public void agregar(Usuario usuario);
 
     /*
      * Elimina un observador al sujeto
      * @param observador el observador a eliminar. 
      */
-    public void eliminar(Observador observador);
+    public void eliminar(Usuario usuario);
 
     /*
      * Notifica el estado del sujeto cada que se modifica
