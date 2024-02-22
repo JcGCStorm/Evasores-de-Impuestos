@@ -11,8 +11,7 @@ public class Thisney extends Servicios {
     /* Objeto de contexto. */
   
     public void cobrar(Usuario usuario) {
-      ThisneyCobrador plan = usuario.getPlanThisney();
-      plan.cobrar(usuario);
+
     }
   }
   
