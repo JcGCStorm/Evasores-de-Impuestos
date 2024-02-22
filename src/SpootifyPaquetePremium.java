@@ -1,11 +1,17 @@
 public class SpootifyPaquetePremium extends Spootify implements SpootifyCobrador {
 
-    public int planPremiumS = 80;
+    private double precio;
     
+    public SpootifyPaquetePremium(double precio) {
+        this.precio = 80;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
     @Override
-    public void cobrar(Usuario usuario){
-        System.out.println("La suscripciónn de Spootify PREMIUM de ");
-        usuario.realizarPago(planPremiumS);
-        usuario.actualizar();
+    public void cobrar(Usuario usuario) {
+        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
     }
 }

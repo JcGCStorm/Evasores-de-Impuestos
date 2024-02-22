@@ -90,7 +90,7 @@ public class Usuario implements Observador{
     //    }  
 
     // Método para realizar un pago mensual y actualizar el saldo
-    public void realizarPago(int monto) {
+    public void realizarPago(double monto) {
         cuenta.realizarPago(monto);
         System.out.println(nombre + " fué pagada con exito, se cobró un total de $" + monto + ". \nSaldo restante: $" + cuenta.getSaldo());
     }

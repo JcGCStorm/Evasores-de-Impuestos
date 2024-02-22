@@ -1,10 +1,17 @@
-public class SpootifyPaqueteGratis extends Spootify implements SpootifyCobrador {
-
-    public int planGratis = 0;
+public class SpootifyPaqueteGratis extends Spootify implements SpootifyCobrador {    
     
+    private double precio;
+    
+    public SpootifyPaqueteGratis(double precio) {
+        this.precio = 0;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
     @Override
-    public void cobrar(Usuario usuario){
-        System.out.println("La suscripciónn de Spootify gratuita de ");
-        usuario.actualizar();
+    public void cobrar(Usuario usuario) {
+        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
     }
 }

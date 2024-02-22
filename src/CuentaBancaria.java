@@ -1,16 +1,16 @@
 public class CuentaBancaria {
-    private int saldo;
+    private double saldo;
     Usuario usuario;
 
-    public CuentaBancaria(int saldoInicial) {
+    public CuentaBancaria(double saldoInicial) {
         this.saldo = saldoInicial;
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void realizarPago(int monto) {
+    public void realizarPago(double monto) {
         saldo -= monto;
     }
 

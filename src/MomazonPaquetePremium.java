@@ -1,11 +1,16 @@
 public class MomazonPaquetePremium extends Momazon implements MomazonCobrador {
-
-    public int planPremium = 150;
+    private double precio;
     
+    public MomazonPaquetePremium(double precio) {
+        this.precio = 150;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
     @Override
-    public void cobrar(Usuario usuario){
-        System.out.println("La suscripciónn de Momazon PREMIUM de ");
-        usuario.realizarPago(planPremium);
-        usuario.actualizar();
+    public void cobrar(Usuario usuario) {
+        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
     }
 }

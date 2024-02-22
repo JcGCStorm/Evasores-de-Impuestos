@@ -11,8 +11,6 @@ public class Momazon extends Servicios {
    /* Objeto de contexto. */
  
    public void cobrar(Usuario usuario) {
-     MomazonCobrador plan = usuario.getPlanMomazon();
-     plan.cobrar(usuario);
    }
  }
  
