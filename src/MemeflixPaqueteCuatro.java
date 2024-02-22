@@ -1,11 +1,16 @@
 public class MemeflixPaqueteCuatro extends Memeflix implements MemeflixCobrador{
- 
-    public int plan4Disp = 200;
+    private double precio;
+    
+    public MemeflixPaqueteCuatro(double precio) {
+        this.precio = 200;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
 
     @Override
-    public void cobrar(Usuario usuario){
-        System.out.println("La suscripciónn de Memeflix para cuatro dispositivos de ");
-        usuario.realizarPago(plan4Disp);
-        usuario.actualizar();
+    public void cobrar(Usuario usuario) {
+        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
     }
 }

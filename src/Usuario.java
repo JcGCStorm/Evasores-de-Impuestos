@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.LinkedList;
+
 /**
  * Clase Usuario, un usuario tiene nombre, un monto de dinero, un número de meses
  * que varía según se contraten servicios y un plan para cada servicio, el cuál
@@ -10,11 +13,8 @@ public class Usuario implements Observador{
     private CuentaBancaria cuenta;
     int[]     meses;
     String notificacion;
-    MemeflixCobrador planMeme;
-    HVO_MAXCobrador planHvo; 
-    MomazonCobrador planMomazon; 
-    ThisneyCobrador planThisney; 
-    SpootifyCobrador planSpootify;
+    private List<Servicios> servicios;
+
     /**
      * Constructor del Usuario.
      * @param nombre
@@ -23,17 +23,11 @@ public class Usuario implements Observador{
      * @param plan
      */
 
-    public Usuario(String nombre, int saldoInicial, int[] meses, MemeflixCobrador planMeme, 
-                   HVO_MAXCobrador planHvo, MomazonCobrador planMomazon, ThisneyCobrador planThisney,
-                   SpootifyCobrador planSpootify){
+    public Usuario(String nombre, int saldoInicial, int[] meses){
         this.nombre = nombre;
         this.cuenta = new CuentaBancaria(saldoInicial);
         this.meses =  new int[5];
-        this.planMeme = planMeme;
-        this.planHvo = planHvo;
-        this.planMomazon = planMomazon;
-        this.planSpootify = planSpootify;
-        this.planThisney = planThisney;
+        this.servicios = new LinkedList<>();
     }
     /**
      * Regresa el nombre del usuario
@@ -80,6 +74,8 @@ public class Usuario implements Observador{
         }
     }
 
+
+
     @Override
     public void actualizar() {
   //      notificacion = planHvo.getNotificacion();
@@ -91,10 +87,10 @@ public class Usuario implements Observador{
   //         + "\nSu suscripción de: " + getPlanHvo_MAX()
    //        + "\n: \n" 
    //        + notificacion);
-    //    }    
+    //    }  
 
     // Método para realizar un pago mensual y actualizar el saldo
-    public void realizarPago(int monto) {
+    public void realizarPago(double monto) {
         cuenta.realizarPago(monto);
         System.out.println(nombre + " fué pagada con exito, se cobró un total de $" + monto + ". \nSaldo restante: $" + cuenta.getSaldo());
     }
@@ -102,26 +98,6 @@ public class Usuario implements Observador{
     // Método para cambiar la versión de la suscripción
     public void cambiarVersion() {
         System.out.println(nombre + " ha cambiado la versión de su suscripción.");
-    }
-
-    public MemeflixCobrador getPlanMemeflix(){
-        return planMeme;
-    }
-
-    public MomazonCobrador getPlanMomazon(){
-        return planMomazon;
-    }
-
-    public SpootifyCobrador getPlanSpootify(){
-        return planSpootify;
-    }
-
-    public ThisneyCobrador getPlanThisney(){
-        return planThisney;
-    }
-
-    public HVO_MAXCobrador getPlanHvo_MAX(){
-        return planHvo;
     }
 
 

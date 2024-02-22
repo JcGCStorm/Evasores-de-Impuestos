@@ -11,8 +11,6 @@ public class Memeflix extends Servicios {
   /* Objeto de contexto. */
 
   public void cobrar(Usuario usuario) {
-    MemeflixCobrador plan = usuario.getPlanMemeflix();
-    plan.cobrar(usuario);
   }
 }
 

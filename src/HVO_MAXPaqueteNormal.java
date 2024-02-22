@@ -1,17 +1,17 @@
 public class HVO_MAXPaqueteNormal extends HVO_MAX implements HVO_MAXCobrador {
 
-    public int planNormal = 140;
+    private double precio;
     
-    @Override
-    public void cobrar(Usuario usuario){
-        System.out.println("La suscripciónn de HVO_MAX con paquete normal de ");
-        usuario.realizarPago(planNormal);
-        usuario.actualizar();
+    public HVO_MAXPaqueteNormal(double precio) {
+        this.precio = 140;
+    }
+
+    public double getPrecio() {
+        return precio;
     }
 
     @Override
-    public String getNotificacion() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNotificacion'");
+    public void cobrar(Usuario usuario) {
+        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
     }
 }

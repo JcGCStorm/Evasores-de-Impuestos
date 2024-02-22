@@ -1,11 +1,17 @@
 public class MomazonPaqueteNormal extends Momazon implements MomazonCobrador {
 
-    public int planNormal = 110;
+    private double precio;
     
+    public MomazonPaqueteNormal(double precio) {
+        this.precio = 110;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
     @Override
-    public void cobrar(Usuario usuario){
-        System.out.println("La suscripciónn de Momazon individual de ");
-        usuario.realizarPago(planNormal);
-        usuario.actualizar();
+    public void cobrar(Usuario usuario) {
+        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
     }
 }

@@ -1,11 +1,16 @@
 public class ThisneyPaqueteTresMeses extends Thisney implements ThisneyCobrador {
-
-    public int plan3Meses = 130;
+    private double precio;
     
+    public ThisneyPaqueteTresMeses(double precio) {
+        this.precio = 130;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
     @Override
-    public void cobrar(Usuario usuario){
-        System.out.println("Tus tres meses gratis de Thisney comienzan ");
-        usuario.realizarPago(plan3Meses);
-        usuario.actualizar();
+    public void cobrar() {
+        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
     }
 }

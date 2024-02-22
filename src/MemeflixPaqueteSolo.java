@@ -1,11 +1,16 @@
 public class MemeflixPaqueteSolo extends Memeflix implements MemeflixCobrador {
-
-    public int plan1Disp = 120;
+        private double precio;
     
-    @Override
-    public void cobrar(Usuario usuario){
-        System.out.println("La suscripciónn de Memeflix con paquete individual de ");
-        usuario.realizarPago(plan1Disp);
-        usuario.actualizar();
+        public MemeflixPaqueteSolo(double precio) {
+            this.precio = 120;
+        }
+    
+        public double getPrecio() {
+            return precio;
+        }
+    
+        @Override
+        public void cobrar(Usuario usuario) {
+            System.out.println("Cobrando " + precio + " por el plan de suscripción.");
+        }
     }
-}

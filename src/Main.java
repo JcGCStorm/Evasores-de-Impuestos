@@ -4,6 +4,8 @@
 public class Main {
     public static void main(String[] args){
 
+      
+
        Usuario alicia = new Usuario("Alicia", 15000, new int[]{0,0,0,0,0}, 
                 new MemeflixPaqueteCuatro(), new HVO_MAXPaqueteGratis(), new MomazonPaquetePremium(), 
                 new ThisneyPaqueteNormal(), new SpootifyPaqueteGratis());

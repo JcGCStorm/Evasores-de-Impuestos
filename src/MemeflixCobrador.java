@@ -1,4 +1,3 @@
 public interface MemeflixCobrador {
-    
-    public void cobrar(Usuario usuario);
+    void cobrar(Usuario usuario);
 }

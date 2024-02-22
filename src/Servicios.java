@@ -1,10 +1,10 @@
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Servicios implements Sujeto{
 
     Usuario usuario;
-	List<Usuario> usuarios = new ArrayList<>();
+	List<Usuario> usuarios = new LinkedList<>();
 
     public List<Usuario> getUsuarios(){
 		return usuarios;
