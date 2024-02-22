@@ -1,4 +1,4 @@
-public class Spootify extends Servicios {
+public class Spootify extends Servicios implements SpootifyCobrador{
 
    /**
     * Implementación de la clase Spootify que sobre escribe al metodo
@@ -11,7 +11,6 @@ public class Spootify extends Servicios {
    /* Objeto de contexto. */
  
    public void cobrar(Usuario usuario) {
-     SpootifyCobrador plan = usuario.getPlanSpootify();
      plan.cobrar(usuario);
    }
  }
