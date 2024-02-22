@@ -10,16 +10,10 @@ public class Servicios implements Sujeto{
 		return usuarios;
 	}
 
-  //  @Override
-  //  public void getPlan(){
-  //      return ServicioStreaming service;
-  //  }
-
     // Método para suscribir un observador al cliente
     @Override
     public void agregar(Usuario usuario) {
         usuarios.add(usuario);
-        System.out.println("Bienvenid@ a" );
     }
 
     

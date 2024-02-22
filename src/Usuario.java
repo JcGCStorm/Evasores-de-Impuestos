@@ -35,7 +35,6 @@ public class Usuario implements Observador{
         this.planSpootify = planSpootify;
         this.planThisney = planThisney;
     }
-
     /**
      * Regresa el nombre del usuario
      * @return el nombre del usuario;

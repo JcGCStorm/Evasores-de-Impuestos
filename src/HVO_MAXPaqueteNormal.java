@@ -8,4 +8,10 @@ public class HVO_MAXPaqueteNormal extends HVO_MAX implements HVO_MAXCobrador {
         usuario.realizarPago(planNormal);
         usuario.actualizar();
     }
+
+    @Override
+    public String getNotificacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNotificacion'");
+    }
 }
