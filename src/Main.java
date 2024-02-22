@@ -12,6 +12,8 @@ public class Main {
        hvo.cobrar(alicia);
        hvo.cobrar(alicia);
        hvo.cobrar(alicia);
+       hvo.setNotificacion("Hola quancha");
+       System.out.println(hvo.getNotificacion());
 
     }
 }
