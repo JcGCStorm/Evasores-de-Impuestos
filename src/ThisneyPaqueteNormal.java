@@ -1,5 +1,5 @@
 /**
- * Clase que representa un paquete de suscripcion normal a Thinsey
+ * Clase que representa un paquete de suscripcion normal a Thisney
  * Extiende la clase Thisney e implementa la interfaz ThisneyCobrador
  */
 public class ThisneyPaqueteNormal extends Thisney implements ThisneyCobrador {
