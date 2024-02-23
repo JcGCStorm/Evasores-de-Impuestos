@@ -16,13 +16,9 @@ public class HVO_MAXPaqueteGratis extends HVO_MAX implements HVO_MAXCobrador {
     public void procesarUsuarios(List<Usuario> usuarios) {
         for (Usuario usuario : usuarios) {
             HVO_MAXPaqueteGratis hvo = new HVO_MAXPaqueteGratis(precio);
-            // Realizar alguna acción con el usuario actual
             hvo.cobrar(usuario);
-            // Aquí puedes hacer cualquier otra acción que necesites con el usuario actual
         }
     }
-
-    // meses HVO = 0
 
     @Override
     public void cobrar(Usuario usuario) {

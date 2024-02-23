@@ -36,7 +36,6 @@ public class MomazonPaquetePremium extends Momazon implements MomazonCobrador {
     }
 
     
-
      /**
      * Implementacion del metodo de cobro para el paquete de suscripcion premium a
      * Momazon

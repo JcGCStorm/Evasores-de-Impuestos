@@ -16,7 +16,7 @@ public class MemeflixPaqueteSolo extends Memeflix implements MemeflixCobrador {
             this.precio = 120;
         }
     
-         /**
+    /**
      * Obtiene el precio del paquete de suscripcion individual
      * 
      * @return El precio del paquete de suscripcion individual
@@ -28,13 +28,11 @@ public class MemeflixPaqueteSolo extends Memeflix implements MemeflixCobrador {
         public void procesarUsuarios(List<Usuario> usuarios) {
             for (Usuario usuario : usuarios) {
                 MemeflixPaqueteSolo thisney = new MemeflixPaqueteSolo(precio);
-                // Realizar alguna acción con el usuario actual
                 thisney.cobrar(usuario);
-                // Aquí puedes hacer cualquier otra acción que necesites con el usuario actual
             }
         }
     
-        /**
+    /**
      * Implementacion del metodo de cobro para el paquete de suscripcion individual a Memeflix
      * Cobra al usuario por el paquete de suscripcion individual y realiza el pago
      * 

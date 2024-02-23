@@ -32,9 +32,7 @@ public class MomazonPaqueteNormal extends Momazon implements MomazonCobrador {
     public void procesarUsuarios(List<Usuario> usuarios) {
         for (Usuario usuario : usuarios) {
             MomazonPaqueteNormal momazon = new MomazonPaqueteNormal(precio);
-            // Realizar alguna acción con el usuario actual
             momazon.cobrar(usuario);
-            // Aquí puedes hacer cualquier otra acción que necesites con el usuario actual
         }
     }
 

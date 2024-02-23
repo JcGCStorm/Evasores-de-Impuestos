@@ -24,6 +24,13 @@ public class MemeflixPaqueteDos extends Memeflix implements MemeflixCobrador {
         return precio;
     }
 
+    public void procesarUsuarios(List<Usuario> usuarios) {
+        for (Usuario usuario : usuarios) {
+            MemeflixPaqueteDos meme = new MemeflixPaqueteDos(precio);
+            meme.cobrar(usuario);
+        }
+    }
+
     /**
      * Implementacion del metodo de cobro para el paquete de suscripcion de dos dispositivos a Memeflix
      * Cobra al usuario por el paquete de suscripcion de dos dispositivos y realiza el pago

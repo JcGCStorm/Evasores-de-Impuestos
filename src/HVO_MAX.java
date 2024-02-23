@@ -11,5 +11,3 @@ public class HVO_MAX extends Servicios {
   public void cobrar(Usuario usuario) {
  }
 }
-// metodos
-
