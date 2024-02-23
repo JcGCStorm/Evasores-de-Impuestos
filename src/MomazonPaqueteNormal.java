@@ -5,7 +5,7 @@
 public class MomazonPaqueteNormal extends Momazon implements MomazonCobrador {
 
     private double precio;
-    
+
     /**
      * Constructor para inicializar un paquete de suscripcion normal a Momazon
      * 
@@ -25,10 +25,12 @@ public class MomazonPaqueteNormal extends Momazon implements MomazonCobrador {
     }
 
     /**
-     * Implementacion del metodo de cobro para el paquete de suscripcion normal a Momazon
+     * Implementacion del metodo de cobro para el paquete de suscripcion normal a
+     * Momazon
      * Cobra al usuario por el paquete de suscripcion normal y realiza el pago
      * 
-     * @param usuario El usuario al que se le cobrara por el paquete de suscripcion normal
+     * @param usuario El usuario al que se le cobrara por el paquete de suscripcion
+     *                normal
      */
     @Override
     public void cobrar(Usuario usuario) {

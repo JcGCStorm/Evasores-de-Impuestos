@@ -5,7 +5,7 @@
 public class MomazonPaquetePremium extends Momazon implements MomazonCobrador {
 
     private double precio;
-    
+
     /**
      * Constructor para inicializar un paquete de suscripcion premium a Momazon
      * 
@@ -24,11 +24,13 @@ public class MomazonPaquetePremium extends Momazon implements MomazonCobrador {
         return precio;
     }
 
-     /**
-     * Implementacion del metodo de cobro para el paquete de suscripcion premium a Momazon
+    /**
+     * Implementacion del metodo de cobro para el paquete de suscripcion premium a
+     * Momazon
      * Cobra al usuario por el paquete de suscripcion premium y realiza el pago
      * 
-     * @param usuario El usuario al que se le cobrara por el paquete de suscripcion premium
+     * @param usuario El usuario al que se le cobrara por el paquete de suscripcion
+     *                premium
      */
     @Override
     public void cobrar(Usuario usuario) {
