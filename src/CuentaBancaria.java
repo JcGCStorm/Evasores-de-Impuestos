@@ -4,6 +4,8 @@
  */
 
 public class CuentaBancaria {
+
+ public class CuentaBancaria {
     private double saldo;
     Usuario usuario;
 
