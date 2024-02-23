@@ -20,7 +20,6 @@ public class Servicios implements Sujeto{
     // Método para cancelar la suscripción
     @Override
     public void eliminar(Usuario usuario) {
-        // Lógica para cancelar la suscripción
         usuarios.remove(usuario);
         System.out.println(usuario.getNombre() + " ha cancelado su suscripción.");
     }

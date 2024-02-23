@@ -76,26 +76,11 @@ public class Usuario implements Observador{
             throw new IndexOutOfBoundsException("Índice fuera de rango");
         }
     }
-
-
   
-
     @Override
     public void actualizar(List<Usuario> usuarios) {
 
-            // Realizar alguna acción con el usuario actual
-            // Aquí puedes hacer cualquier otra acción que necesites con el usuario actual
         }
-
-  //      notificacion = planHvo.getNotificacion();
-//	verNoticia();
-
- //   public void verNoticia(){
-  //      System.out.println("Querid@: " + nombre 
-  //         + "\nSu suscripción de: " + getPlanHvo_MAX()
-   //        + "\n: \n" 
-   //        + notificacion);
-    //    }  
 
     // Método para realizar un pago mensual y actualizar el saldo
     public void realizarPago(Usuario usuario, double monto) {
@@ -112,6 +97,4 @@ public class Usuario implements Observador{
         System.out.println(nombre + " ha cambiado la versión de su suscripción. \n");
         
     }
-
-
 }

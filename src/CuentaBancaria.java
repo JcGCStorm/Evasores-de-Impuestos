@@ -1,7 +1,9 @@
 /**
  * La clase CuentaBancaria representa una cuenta bancaria que contiene un saldo
- * y pertenece a los usuarios
+ * y pertenecerá a los usuarios
  */
+
+public class CuentaBancaria {
 
  public class CuentaBancaria {
     private double saldo;
@@ -28,7 +30,7 @@
      * @param monto El monto del pago a realizar
      */
     public void realizarPago(double monto) {
-            saldo -= monto;
+        saldo -= monto;
     }
 
 }

@@ -15,6 +15,4 @@ public class Thisney extends Servicios {
     }
   }
   
-  // metodos
-  
  

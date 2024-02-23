@@ -16,20 +16,16 @@ public class HVO_MAXPaqueteGratis extends HVO_MAX implements HVO_MAXCobrador {
     public void procesarUsuarios(List<Usuario> usuarios) {
         for (Usuario usuario : usuarios) {
             HVO_MAXPaqueteGratis hvo = new HVO_MAXPaqueteGratis(precio);
-            // Realizar alguna acción con el usuario actual
             hvo.cobrar(usuario);
-            // Aquí puedes hacer cualquier otra acción que necesites con el usuario actual
         }
     }
-
-    // meses HVO = 0
 
     @Override
     public void cobrar(Usuario usuario) {
         if(usuario.getMes(0) < 3){
             System.out.println( usuario.getNombre() + ", disfruta de tu suscripciónn de HVO_MAX gratuita, aún te quedan " 
-            + (3 - usuario.getMes(1)) + " meses/es");
-            usuario.setMes(1, (usuario.getMes(1) + 1));
+            + (3 - usuario.getMes(0)) + " meses/es");
+            usuario.setMes(0, (usuario.getMes(0) + 1));
         } else {
                 System.out.println(usuario.getNombre() +", tú suscripciónn de HVO_MAX con paquete gratis ha expirado.");
                 usuario.cambiarVersion();

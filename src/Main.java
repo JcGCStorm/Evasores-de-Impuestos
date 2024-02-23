@@ -1,4 +1,6 @@
 import java.util.List;     
+import java.io.FileOutputStream;
+import java.io.PrintStream;
      /**
       * Clase Main, le dice que hacer a nuestra simulación.
       */   
@@ -6,7 +8,12 @@ public class Main {
     @SuppressWarnings("unchecked")
     public static void main(String[] args){
 
-      
+        PrintStream stdout = System.out;
+        try {
+
+            FileOutputStream fileOutputStream = new FileOutputStream("Simulacion.txt");
+            PrintStream printStream = new PrintStream(fileOutputStream);
+            System.setOut(printStream);
      /**
       * Creación de los usuarios para la simulación.
       */
@@ -39,31 +46,31 @@ public class Main {
        /**
         * Comenzamos la simulación. Agregamos los servicios de Alicia
         */
-        hvoNormal.agregar(alicia);
+        hvoGratis.agregar(alicia);
         memeflixCuatro.agregar(alicia);
         momazonPremium.agregar(alicia);
-        thisneyNormal.agregar(alicia);
+        thisney3meses.agregar(alicia);
         spootifyPremium.agregar(alicia);
 
         /**
          * Agregamos los servicios de Bob.
          */
-        hvoNormal.agregar(bob);
+        hvoGratis.agregar(bob);
         memeflixCuatro.agregar(bob);
         momazonPremium.agregar(bob);
-        thisneyNormal.agregar(bob);
+        thisney3meses.agregar(bob);
         spootifyPremium.agregar(bob);
 
         /**
          * Agregamos los servicios de César.
          */
-        hvoNormal.agregar(cesar);
-        thisneyNormal.agregar(cesar);
+        hvoGratis.agregar(cesar);
+        thisney3meses.agregar(cesar);
         
         /**
          * Agregamos los servicios de Diego.
          */
-        hvoNormal.agregar(diego);
+        hvoGratis.agregar(diego);
         momazonPremium.agregar(diego);
         spootifyGratis.agregar(diego);
 
@@ -72,13 +79,13 @@ public class Main {
          */
         memeflixCuatro.agregar(erika);
         spootifyGratis.agregar(erika);
-        hvoNormal.agregar(erika);
+        hvoGratis.agregar(erika);
 
         /**
          * Agregamos los servicios de Fausto.
          */
-        thisneyNormal.agregar(fausto);
-        hvoNormal.agregar(fausto);
+        thisney3meses.agregar(fausto);
+        hvoGratis.agregar(fausto);
 
         /**
          * Obtenemos las listas de los usuarios que contrataron los servicios.
@@ -94,7 +101,7 @@ public class Main {
          List listaMomazonP = momazonPremium.getUsuarios();
          List listaMomazonN = momazonNormal.getUsuarios();
 
-         List listaThisneyN = thisneyNormal.getUsuarios();
+         List listaThisneyN = thisney3meses.getUsuarios();
          List listaThisney3M = thisney3meses.getUsuarios();
 
          List listaSpootiPremium = spootifyPremium.getUsuarios();
@@ -106,7 +113,6 @@ public class Main {
          System.out.println("################### Primer mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
-        hvoNormal.procesarUsuarios(listahvoNormal);
         hvoGratis.procesarUsuarios(listahvoGratis);
 
         System.out.println("\n\n");
@@ -125,8 +131,7 @@ public class Main {
 
         System.out.println("\n\n");
 
-        System.out.println("-----------------------------Thisney--------------------------------");
-        thisneyNormal.procesarUsuarios(listaThisneyN);
+        System.out.println("----------------------------- Thisney  ------------------------------");
         thisney3meses.procesarUsuarios(listaThisney3M);
 
         System.out.println("\n\n");
@@ -143,7 +148,6 @@ public class Main {
          System.out.println("################### Segundo mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
-        hvoNormal.procesarUsuarios(listahvoNormal);
         hvoGratis.procesarUsuarios(listahvoGratis);
 
         System.out.println("\n\n");
@@ -163,7 +167,6 @@ public class Main {
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Thisney--------------------------------");
-        thisneyNormal.procesarUsuarios(listaThisneyN);
         thisney3meses.procesarUsuarios(listaThisney3M);
 
         System.out.println("\n\n");
@@ -182,12 +185,13 @@ public class Main {
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
          // Erika cancela su subscripción de HVO_MAX
-        hvoNormal.eliminar(erika);
+
+        hvoGratis.eliminar(erika);
         // Bob cancela su subscripción de HVO_MAX
-        hvoNormal.eliminar(bob);
+        hvoGratis.eliminar(bob);
         // Fausto cancela su subscripción de HVO_MAX
-        hvoNormal.eliminar(fausto);
-        hvoNormal.procesarUsuarios(listahvoNormal);
+
+        hvoGratis.eliminar(fausto);
         hvoGratis.procesarUsuarios(listahvoGratis);
         
 
@@ -211,12 +215,12 @@ public class Main {
 
         System.out.println("-----------------------------Thisney--------------------------------");
         // Erika contrata Thisney
-        thisneyNormal.agregar(erika);
+        thisney3meses.agregar(erika);
         // Bob se da de baja de Thisney
-        thisneyNormal.eliminar(bob);
+        thisney3meses.eliminar(bob);
         // Fausto se da de baja de Thisney
-        thisneyNormal.eliminar(fausto);
-        thisneyNormal.procesarUsuarios(listaThisneyN);
+
+        thisney3meses.eliminar(fausto);
         thisney3meses.procesarUsuarios(listaThisney3M);
 
         System.out.println("\n\n");
@@ -234,7 +238,6 @@ public class Main {
          System.out.println("################### Cuarto mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
-        hvoNormal.procesarUsuarios(listahvoNormal);
         hvoGratis.procesarUsuarios(listahvoGratis);
 
         System.out.println("\n\n");
@@ -257,7 +260,6 @@ public class Main {
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Thisney--------------------------------");
-        thisneyNormal.procesarUsuarios(listaThisneyN);
         thisney3meses.procesarUsuarios(listaThisney3M);
 
         System.out.println("\n\n");
@@ -276,8 +278,8 @@ public class Main {
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
          // Fausto vuelve a contratar HVO_MAX
-        hvoNormal.agregar(fausto);
-        hvoNormal.procesarUsuarios(listahvoNormal);
+
+        hvoGratis.agregar(fausto);
         hvoGratis.procesarUsuarios(listahvoGratis);
 
         System.out.println("\n\n");
@@ -298,8 +300,9 @@ public class Main {
 
         System.out.println("-----------------------------Thisney--------------------------------");
         //Fausto vuelve a contratar Thisney
-        thisneyNormal.agregar(fausto);
-        thisneyNormal.procesarUsuarios(listaThisneyN);
+
+        thisney3meses.agregar(fausto);
+
         thisney3meses.procesarUsuarios(listaThisney3M); 
 
         System.out.println("\n\n");
@@ -317,10 +320,8 @@ public class Main {
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
          // Fausto cancela HVO_MAX
-        hvoNormal.eliminar(fausto);
-        hvoNormal.procesarUsuarios(listahvoNormal);
+        hvoGratis.eliminar(fausto);
         hvoGratis.procesarUsuarios(listahvoGratis);
-        
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Memeflix--------------------------------");
@@ -344,12 +345,12 @@ public class Main {
 
         System.out.println("-----------------------------Thisney--------------------------------");
         // Diego se suscribe a Thisney
-        thisneyNormal.agregar(diego);
+
+        thisney3meses.agregar(diego);
         // Erika cancela Thisney
-        thisneyNormal.eliminar(erika);
+        thisney3meses.eliminar(erika);
         // Fausto cancela Thisney
-        thisneyNormal.eliminar(fausto);
-        thisneyNormal.procesarUsuarios(listaThisneyN);
+        thisney3meses.eliminar(fausto);
         thisney3meses.procesarUsuarios(listaThisney3M);
 
         System.out.println("\n\n");
@@ -370,7 +371,7 @@ public class Main {
          System.out.println("################### Septimo mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
-        hvoNormal.procesarUsuarios(listahvoNormal);
+
         hvoGratis.procesarUsuarios(listahvoGratis);
 
         System.out.println("\n\n");
@@ -393,7 +394,6 @@ public class Main {
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Thisney--------------------------------");
-        thisneyNormal.procesarUsuarios(listaThisneyN);
         thisney3meses.procesarUsuarios(listaThisney3M);
 
         System.out.println("\n\n");
@@ -417,7 +417,6 @@ public class Main {
          System.out.println("################### Octavo mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
-        hvoNormal.procesarUsuarios(listahvoNormal);
         hvoGratis.procesarUsuarios(listahvoGratis);
 
         System.out.println("\n\n");
@@ -437,9 +436,7 @@ public class Main {
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Thisney--------------------------------");
-        thisneyNormal.procesarUsuarios(listaThisneyN);
         thisney3meses.procesarUsuarios(listaThisney3M);
-
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Spootify--------------------------------");
@@ -454,9 +451,7 @@ public class Main {
          System.out.println("################### Noveno mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
-        hvoNormal.procesarUsuarios(listahvoNormal);
         hvoGratis.procesarUsuarios(listahvoGratis);
-
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Memeflix--------------------------------");
@@ -474,7 +469,7 @@ public class Main {
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Thisney--------------------------------");
-        thisneyNormal.procesarUsuarios(listaThisneyN);
+
         thisney3meses.procesarUsuarios(listaThisney3M);
 
         System.out.println("\n\n");
@@ -491,8 +486,7 @@ public class Main {
 
         System.out.println("--------------------------HVO_MAX-----------------------------");
         // Erika contrata HVO_MAX
-        hvoNormal.agregar(erika);
-       hvoNormal.procesarUsuarios(listahvoNormal);
+       hvoGratis.agregar(erika);
        hvoGratis.procesarUsuarios(listahvoGratis);
 
        System.out.println("\n\n");
@@ -514,8 +508,7 @@ public class Main {
 
        System.out.println("-----------------------------Thisney--------------------------------");
        // Erika contrata Thisney
-       thisneyNormal.agregar(erika);
-       thisneyNormal.procesarUsuarios(listaThisneyN);
+       thisney3meses.agregar(erika);
        thisney3meses.procesarUsuarios(listaThisney3M);
 
        System.out.println("\n\n");
@@ -528,5 +521,10 @@ public class Main {
        System.out.println("Fin de la simulación, despierta.");
 
 
-    }
+   } catch (Exception e) {
+        e.printStackTrace();
+       } finally {
+        System.setOut(stdout);
+     }
+   }
 }

@@ -7,12 +7,7 @@ public class Momazon extends Servicios {
     * 
     * @param usuario el usuario al que se le está cobrando el servicio.
     */
- 
-   /* Objeto de contexto. */
- 
+  
    public void cobrar(Usuario usuario) {
    }
  }
- 
- // metodos
- 
