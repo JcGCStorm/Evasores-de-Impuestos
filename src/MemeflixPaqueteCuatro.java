@@ -23,6 +23,12 @@ public class MemeflixPaqueteCuatro extends Memeflix implements MemeflixCobrador 
         return precio;
     }
 
+    /**
+     * Implementacion del metodo de cobro para el paquete de suscripcion de 4 dispositivos a Memeflix
+     * Cobra al usuario por el paquete de suscripcion de 4 dispositivos y realiza el pago
+     * 
+     * @param usuario El usuario al que se le cobrara por el paquete de suscripcion de 4 dispositivos
+     */
     @Override
     public void cobrar(Usuario usuario) {
         System.out.println("Cobrando " + precio + " por el plan de suscripción para cuatro dispositivos de Memeflix.");
