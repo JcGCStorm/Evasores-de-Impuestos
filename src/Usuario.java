@@ -37,6 +37,9 @@ public class Usuario implements Observador{
         return nombre;
     }
 
+    public double getSaldo() {
+        return cuenta.getSaldo();
+    }
     /**
      * Define el nombre del Usuario
      * @param nombre el nuevo nombre del Usuario
@@ -75,12 +78,17 @@ public class Usuario implements Observador{
     }
 
 
+  
 
     @Override
-    public void actualizar() {
+    public void actualizar(List<Usuario> usuarios) {
+
+            // Realizar alguna acción con el usuario actual
+            // Aquí puedes hacer cualquier otra acción que necesites con el usuario actual
+        }
+
   //      notificacion = planHvo.getNotificacion();
 //	verNoticia();
-        }
 
  //   public void verNoticia(){
   //      System.out.println("Querid@: " + nombre 
@@ -90,14 +98,19 @@ public class Usuario implements Observador{
     //    }  
 
     // Método para realizar un pago mensual y actualizar el saldo
-    public void realizarPago(double monto) {
+    public void realizarPago(Usuario usuario, double monto) {
+        if(usuario.getSaldo() > monto){
         cuenta.realizarPago(monto);
-        System.out.println(nombre + " fué pagada con exito, se cobró un total de $" + monto + ". \nSaldo restante: $" + cuenta.getSaldo());
+        System.out.println("Su suscripción fué pagada con exito, se cobró un total de $" + monto + ". \n" + "Gracias por seguir con nosotros " + getNombre() + "\nSaldo restante: $" + cuenta.getSaldo() + "\n");
+        } else {
+            System.out.println("No fué posible realizar el pago, saldo insuficiente. \n");
+        }
     }
 
     // Método para cambiar la versión de la suscripción
     public void cambiarVersion() {
-        System.out.println(nombre + " ha cambiado la versión de su suscripción.");
+        System.out.println(nombre + " ha cambiado la versión de su suscripción. \n");
+        
     }
 
 

@@ -28,7 +28,7 @@
      * @param monto El monto del pago a realizar
      */
     public void realizarPago(double monto) {
-        saldo -= monto;
+            saldo -= monto;
     }
 
 }
