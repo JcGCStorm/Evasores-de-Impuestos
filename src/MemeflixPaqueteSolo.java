@@ -9,8 +9,11 @@ public class MemeflixPaqueteSolo extends Memeflix implements MemeflixCobrador {
             return precio;
         }
     
+        // meses de Memeflix = 1
+
         @Override
         public void cobrar(Usuario usuario) {
-            System.out.println("Cobrando " + precio + " por el plan de suscripción.");
+            System.out.println("Cobrando " + precio + " por el plan de suscripción para un dispositivo de HVO_MAX.");
+            usuario.realizarPago(usuario, precio);
         }
     }

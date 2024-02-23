@@ -96,7 +96,7 @@ public class Usuario implements Observador{
     public void realizarPago(Usuario usuario, double monto) {
         if(usuario.getSaldo() > monto){
         cuenta.realizarPago(monto);
-        System.out.println(nombre + " fué pagada con exito, se cobró un total de $" + monto + ". \nSaldo restante: $" + cuenta.getSaldo());
+        System.out.println("Su suscripción fué pagada con exito, se cobró un total de $" + monto + ". \n" + "Gracias por seguir con nosotros " + getNombre() + "\nSaldo restante: $" + cuenta.getSaldo());
         } else {
             System.out.println("No fué posible realizar el pago, saldo insuficiente");
         }
@@ -105,6 +105,7 @@ public class Usuario implements Observador{
     // Método para cambiar la versión de la suscripción
     public void cambiarVersion() {
         System.out.println(nombre + " ha cambiado la versión de su suscripción.");
+        
     }
 
 

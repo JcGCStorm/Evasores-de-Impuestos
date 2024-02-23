@@ -10,8 +10,12 @@ public class MomazonPaqueteNormal extends Momazon implements MomazonCobrador {
         return precio;
     }
 
+    // meses de Momazon = 2
+
+
     @Override
     public void cobrar(Usuario usuario) {
-        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
+        System.out.println("Cobrando " + precio + " por el plan de suscripción normal de Momazon.");
+        usuario.realizarPago(usuario, precio);
     }
 }

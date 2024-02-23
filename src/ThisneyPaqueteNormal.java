@@ -10,8 +10,11 @@ public class ThisneyPaqueteNormal extends Thisney implements ThisneyCobrador {
             return precio;
         }
     
+           // meses de Thisney = 4
+         
         @Override
         public void cobrar(Usuario usuario) {
-            System.out.println("Cobrando " + precio + " por el plan de suscripción.");
+            System.out.println("Cobrando " + precio + " por el plan de suscripción de Thisney.");
+            usuario.realizarPago(usuario, precio);
         }
 }

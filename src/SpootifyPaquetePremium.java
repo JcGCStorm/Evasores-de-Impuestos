@@ -10,8 +10,11 @@ public class SpootifyPaquetePremium extends Spootify implements SpootifyCobrador
         return precio;
     }
 
+    // meses de Spootify = 3
+
     @Override
     public void cobrar(Usuario usuario) {
-        System.out.println("Cobrando " + precio + " por el plan de suscripción.");
+        System.out.println("Cobrando " + precio + " por el plan de suscripción PREMIUM de Spootify.");
+        usuario.realizarPago(usuario, precio);
     }
 }
