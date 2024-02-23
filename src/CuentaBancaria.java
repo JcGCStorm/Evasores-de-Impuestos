@@ -11,7 +11,7 @@ public class CuentaBancaria {
     }
 
     public void realizarPago(double monto) {
-        saldo -= monto;
+            saldo -= monto;
     }
 
 }

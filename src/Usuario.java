@@ -37,6 +37,9 @@ public class Usuario implements Observador{
         return nombre;
     }
 
+    public double getSaldo() {
+        return cuenta.getSaldo();
+    }
     /**
      * Define el nombre del Usuario
      * @param nombre el nuevo nombre del Usuario
@@ -90,9 +93,13 @@ public class Usuario implements Observador{
     //    }  
 
     // Método para realizar un pago mensual y actualizar el saldo
-    public void realizarPago(double monto) {
+    public void realizarPago(Usuario usuario, double monto) {
+        if(usuario.getSaldo() > monto){
         cuenta.realizarPago(monto);
         System.out.println(nombre + " fué pagada con exito, se cobró un total de $" + monto + ". \nSaldo restante: $" + cuenta.getSaldo());
+        } else {
+            System.out.println("No fué posible realizar el pago, saldo insuficiente");
+        }
     }
 
     // Método para cambiar la versión de la suscripción

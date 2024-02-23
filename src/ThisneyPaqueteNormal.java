@@ -11,7 +11,7 @@ public class ThisneyPaqueteNormal extends Thisney implements ThisneyCobrador {
         }
     
         @Override
-        public void cobrar() {
+        public void cobrar(Usuario usuario) {
             System.out.println("Cobrando " + precio + " por el plan de suscripción.");
         }
 }
