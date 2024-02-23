@@ -77,9 +77,6 @@ public class Usuario implements Observador{
         }
     }
 
-
-  
-
     @Override
     public void actualizar(List<Usuario> usuarios) {
 

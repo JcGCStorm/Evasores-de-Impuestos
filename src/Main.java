@@ -1,4 +1,6 @@
 import java.util.List;     
+import java.io.FileOutputStream;
+import java.io.PrintStream;
      /**
       * Clase Main, le dice que hacer a nuestra simulación.
       */   
@@ -6,7 +8,12 @@ public class Main {
     @SuppressWarnings("unchecked")
     public static void main(String[] args){
 
-      
+        PrintStream stdout = System.out;
+        try {
+
+            FileOutputStream fileOutputStream = new FileOutputStream("Simulacion.txt");
+            PrintStream printStream = new PrintStream(fileOutputStream);
+            System.setOut(printStream);
      /**
       * Creación de los usuarios para la simulación.
       */
@@ -528,5 +535,10 @@ public class Main {
        System.out.println("Fin de la simulación, despierta.");
 
 
-    }
+   } catch (Exception e) {
+        e.printStackTrace();
+       } finally {
+        System.setOut(stdout);
+     }
+   }
 }
