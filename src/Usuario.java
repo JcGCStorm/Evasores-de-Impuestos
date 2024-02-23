@@ -78,9 +78,7 @@ public class Usuario implements Observador{
     }
 
 
-    public void agregarServicios(Servicios servicio) {
-        servicios.add(servicio);
-    }
+  
 
     @Override
     public void actualizar(List<Usuario> usuarios) {
@@ -105,13 +103,13 @@ public class Usuario implements Observador{
         cuenta.realizarPago(monto);
         System.out.println("Su suscripción fué pagada con exito, se cobró un total de $" + monto + ". \n" + "Gracias por seguir con nosotros " + getNombre() + "\nSaldo restante: $" + cuenta.getSaldo() + "\n");
         } else {
-            System.out.println("No fué posible realizar el pago, saldo insuficiente");
+            System.out.println("No fué posible realizar el pago, saldo insuficiente. \n");
         }
     }
 
     // Método para cambiar la versión de la suscripción
     public void cambiarVersion() {
-        System.out.println(nombre + " ha cambiado la versión de su suscripción.");
+        System.out.println(nombre + " ha cambiado la versión de su suscripción. \n");
         
     }
 

@@ -181,23 +181,24 @@ public class Main {
          System.out.println("################### Tercer mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
-        hvoNormal.procesarUsuarios(listahvoNormal);
-        hvoGratis.procesarUsuarios(listahvoGratis);
-        // Erika cancela su subscripción de HVO_MAX
+         // Erika cancela su subscripción de HVO_MAX
         hvoNormal.eliminar(erika);
         // Bob cancela su subscripción de HVO_MAX
         hvoNormal.eliminar(bob);
         // Fausto cancela su subscripción de HVO_MAX
         hvoNormal.eliminar(fausto);
+        hvoNormal.procesarUsuarios(listahvoNormal);
+        hvoGratis.procesarUsuarios(listahvoGratis);
+        
 
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Memeflix--------------------------------");
+        // Fausto contrata Memeflix para un dispositivo
+        memeflixSolo.agregar(fausto);
         memeflixCuatro.procesarUsuarios(listaMeme4);
         memeflixDos.procesarUsuarios(listaMeme2);
         memeflixSolo.procesarUsuarios(listaMeme);
-        // Fausto contrata Memeflix para un dispositivo
-        memeflixSolo.agregar(fausto);
 
         System.out.println("\n\n");
 
@@ -209,14 +210,14 @@ public class Main {
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Thisney--------------------------------");
-        thisneyNormal.procesarUsuarios(listaThisneyN);
-        thisney3meses.procesarUsuarios(listaThisney3M);
         // Erika contrata Thisney
         thisneyNormal.agregar(erika);
         // Bob se da de baja de Thisney
         thisneyNormal.eliminar(bob);
         // Fausto se da de baja de Thisney
         thisneyNormal.eliminar(fausto);
+        thisneyNormal.procesarUsuarios(listaThisneyN);
+        thisney3meses.procesarUsuarios(listaThisney3M);
 
         System.out.println("\n\n");
 
@@ -239,20 +240,19 @@ public class Main {
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Memeflix--------------------------------");
+        // Bob se da de baja de Memeflix
+        memeflixCuatro.eliminar(bob);
         memeflixCuatro.procesarUsuarios(listaMeme4);
         memeflixDos.procesarUsuarios(listaMeme2);
         memeflixSolo.procesarUsuarios(listaMeme);
-        // Bob se da de baja de Memeflix
-        memeflixCuatro.eliminar(bob);
 
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Momazon--------------------------------");
-
+         // Bob se da de baja de Momazon
+         momazonPremium.eliminar(bob);
         momazonPremium.procesarUsuarios(listaMomazonP);
         momazonNormal.procesarUsuarios(listaMomazonN);
-        // Bob se da de baja de Momazon
-        momazonPremium.eliminar(bob);
 
         System.out.println("\n\n");
 
@@ -275,10 +275,10 @@ public class Main {
          System.out.println("################### Quinto mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
+         // Fausto vuelve a contratar HVO_MAX
+        hvoNormal.agregar(fausto);
         hvoNormal.procesarUsuarios(listahvoNormal);
         hvoGratis.procesarUsuarios(listahvoGratis);
-        // Fausto vuelve a contratar HVO_MAX
-        hvoNormal.agregar(fausto);
 
         System.out.println("\n\n");
 
@@ -297,10 +297,10 @@ public class Main {
         System.out.println("\n\n");
 
         System.out.println("-----------------------------Thisney--------------------------------");
-        thisneyNormal.procesarUsuarios(listaThisneyN);
-        thisney3meses.procesarUsuarios(listaThisney3M); 
         //Fausto vuelve a contratar Thisney
         thisneyNormal.agregar(fausto);
+        thisneyNormal.procesarUsuarios(listaThisneyN);
+        thisney3meses.procesarUsuarios(listaThisney3M); 
 
         System.out.println("\n\n");
 
@@ -314,6 +314,107 @@ public class Main {
          * Sexto mes.
          */
         System.out.println("################### Sexto mes #########################\n");
+
+         System.out.println("--------------------------HVO_MAX-----------------------------");
+         // Fausto cancela HVO_MAX
+        hvoNormal.eliminar(fausto);
+        hvoNormal.procesarUsuarios(listahvoNormal);
+        hvoGratis.procesarUsuarios(listahvoGratis);
+        
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Memeflix--------------------------------");
+        // Erika cancela Memeflix
+        memeflixCuatro.eliminar(erika);
+        // Fausto cancela Memeflix
+        memeflixSolo.eliminar(fausto);
+        memeflixCuatro.procesarUsuarios(listaMeme4);
+        memeflixDos.procesarUsuarios(listaMeme2);
+        memeflixSolo.procesarUsuarios(listaMeme);
+
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Momazon--------------------------------");
+
+        momazonPremium.procesarUsuarios(listaMomazonP);
+        momazonNormal.procesarUsuarios(listaMomazonN);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Thisney--------------------------------");
+        // Diego se suscribe a Thisney
+        thisneyNormal.agregar(diego);
+        // Erika cancela Thisney
+        thisneyNormal.eliminar(erika);
+        // Fausto cancela Thisney
+        thisneyNormal.eliminar(fausto);
+        thisneyNormal.procesarUsuarios(listaThisneyN);
+        thisney3meses.procesarUsuarios(listaThisney3M);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Spootify--------------------------------");
+        // Erika cancela Spootify
+        spootifyGratis.eliminar(erika);
+        spootifyPremium.procesarUsuarios(listaSpootiPremium);
+        spootifyGratis.procesarUsuarios(listaSpootiGratis);
+        
+        System.out.println("\n\n");
+
+
+         /**
+         * Septimo mes.
+         */
+
+         System.out.println("################### Septimo mes #########################\n");
+
+         System.out.println("--------------------------HVO_MAX-----------------------------");
+        hvoNormal.procesarUsuarios(listahvoNormal);
+        hvoGratis.procesarUsuarios(listahvoGratis);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Memeflix--------------------------------");
+        // Diego se suscribe a Memeflix para un dispositivo
+        memeflixSolo.agregar(diego);
+        memeflixCuatro.procesarUsuarios(listaMeme4);
+        memeflixDos.procesarUsuarios(listaMeme2);
+        memeflixSolo.procesarUsuarios(listaMeme);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Momazon--------------------------------");
+        // Diego cancela su subscripcion de Momazon premium
+        momazonPremium.eliminar(diego);
+        momazonPremium.procesarUsuarios(listaMomazonP);
+        momazonNormal.procesarUsuarios(listaMomazonN);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Thisney--------------------------------");
+        thisneyNormal.procesarUsuarios(listaThisneyN);
+        thisney3meses.procesarUsuarios(listaThisney3M);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Spootify--------------------------------");
+        // Cesar contrata SpootifyPremium
+        spootifyPremium.agregar(cesar);
+        // Diego cambia a la versión premium de spootify
+        spootifyGratis.eliminar(diego);
+        diego.cambiarVersion();
+        spootifyPremium.agregar(diego);
+
+        spootifyPremium.procesarUsuarios(listaSpootiPremium);
+        spootifyGratis.procesarUsuarios(listaSpootiGratis);
+        System.out.println("\n\n");
+
+         /**
+         * Octavo mes.
+         */
+
+         System.out.println("################### Octavo mes #########################\n");
 
          System.out.println("--------------------------HVO_MAX-----------------------------");
         hvoNormal.procesarUsuarios(listahvoNormal);
@@ -338,7 +439,6 @@ public class Main {
         System.out.println("-----------------------------Thisney--------------------------------");
         thisneyNormal.procesarUsuarios(listaThisneyN);
         thisney3meses.procesarUsuarios(listaThisney3M);
-        // Diego se suscribe a Thisney
 
         System.out.println("\n\n");
 
@@ -347,24 +447,86 @@ public class Main {
         spootifyGratis.procesarUsuarios(listaSpootiGratis);
         System.out.println("\n\n");
 
-
-         /**
-         * Septimo mes.
-         */
-
-
-         /**
-         * Octavo mes.
-         */
-
-
          /**
          * Noveno mes.
          */
 
+         System.out.println("################### Noveno mes #########################\n");
+
+         System.out.println("--------------------------HVO_MAX-----------------------------");
+        hvoNormal.procesarUsuarios(listahvoNormal);
+        hvoGratis.procesarUsuarios(listahvoGratis);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Memeflix--------------------------------");
+        memeflixCuatro.procesarUsuarios(listaMeme4);
+        memeflixDos.procesarUsuarios(listaMeme2);
+        memeflixSolo.procesarUsuarios(listaMeme);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Momazon--------------------------------");
+
+        momazonPremium.procesarUsuarios(listaMomazonP);
+        momazonNormal.procesarUsuarios(listaMomazonN);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Thisney--------------------------------");
+        thisneyNormal.procesarUsuarios(listaThisneyN);
+        thisney3meses.procesarUsuarios(listaThisney3M);
+
+        System.out.println("\n\n");
+
+        System.out.println("-----------------------------Spootify--------------------------------");
+        spootifyPremium.procesarUsuarios(listaSpootiPremium);
+        spootifyGratis.procesarUsuarios(listaSpootiGratis);
+        System.out.println("\n\n");
+
          /**
          * Decimo mes.
          */
+        System.out.println("################### Decimo mes #########################\n");
+
+        System.out.println("--------------------------HVO_MAX-----------------------------");
+        // Erika contrata HVO_MAX
+        hvoNormal.agregar(erika);
+       hvoNormal.procesarUsuarios(listahvoNormal);
+       hvoGratis.procesarUsuarios(listahvoGratis);
+
+       System.out.println("\n\n");
+
+       System.out.println("-----------------------------Memeflix--------------------------------");
+       memeflixCuatro.procesarUsuarios(listaMeme4);
+       memeflixDos.procesarUsuarios(listaMeme2);
+       memeflixSolo.procesarUsuarios(listaMeme);
+
+       System.out.println("\n\n");
+
+       System.out.println("-----------------------------Momazon--------------------------------");
+       // Erika contrata Momazon premium
+       momazonPremium.agregar(erika);
+       momazonPremium.procesarUsuarios(listaMomazonP);
+       momazonNormal.procesarUsuarios(listaMomazonN);
+
+       System.out.println("\n\n");
+
+       System.out.println("-----------------------------Thisney--------------------------------");
+       // Erika contrata Thisney
+       thisneyNormal.agregar(erika);
+       thisneyNormal.procesarUsuarios(listaThisneyN);
+       thisney3meses.procesarUsuarios(listaThisney3M);
+
+       System.out.println("\n\n");
+
+       System.out.println("-----------------------------Spootify--------------------------------");
+       spootifyPremium.procesarUsuarios(listaSpootiPremium);
+       spootifyGratis.procesarUsuarios(listaSpootiGratis);
+       System.out.println("\n\n");
+
+       System.out.println("Fin de la simulación, despierta.");
+
 
     }
 }
