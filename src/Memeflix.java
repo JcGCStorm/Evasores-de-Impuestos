@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Memeflix extends Servicios {
 
   /**
@@ -10,7 +12,7 @@ public class Memeflix extends Servicios {
 
   /* Objeto de contexto. */
 
-  public void cobrar(Usuario usuario) {
+  public void cobrar(List<Usuario> usuarios) {
   }
 }
 

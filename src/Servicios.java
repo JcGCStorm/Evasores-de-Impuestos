@@ -22,13 +22,13 @@ public class Servicios implements Sujeto{
     public void eliminar(Usuario usuario) {
         // Lógica para cancelar la suscripción
         usuarios.remove(usuario);
-        System.out.println(usuario + " ha cancelado su suscripción.");
+        System.out.println(usuario.getNombre() + " ha cancelado su suscripción.");
     }
 
     @Override
     public void notificar(){
         for (Usuario usuario : usuarios) {
-            usuario.actualizar();
+            usuario.actualizar(usuarios);
         }
     }
 }

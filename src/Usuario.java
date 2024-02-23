@@ -78,12 +78,19 @@ public class Usuario implements Observador{
     }
 
 
+    public void agregarServicios(Servicios servicio) {
+        servicios.add(servicio);
+    }
 
     @Override
-    public void actualizar() {
+    public void actualizar(List<Usuario> usuarios) {
+
+            // Realizar alguna acción con el usuario actual
+            // Aquí puedes hacer cualquier otra acción que necesites con el usuario actual
+        }
+
   //      notificacion = planHvo.getNotificacion();
 //	verNoticia();
-        }
 
  //   public void verNoticia(){
   //      System.out.println("Querid@: " + nombre 
@@ -96,7 +103,7 @@ public class Usuario implements Observador{
     public void realizarPago(Usuario usuario, double monto) {
         if(usuario.getSaldo() > monto){
         cuenta.realizarPago(monto);
-        System.out.println("Su suscripción fué pagada con exito, se cobró un total de $" + monto + ". \n" + "Gracias por seguir con nosotros " + getNombre() + "\nSaldo restante: $" + cuenta.getSaldo());
+        System.out.println("Su suscripción fué pagada con exito, se cobró un total de $" + monto + ". \n" + "Gracias por seguir con nosotros " + getNombre() + "\nSaldo restante: $" + cuenta.getSaldo() + "\n");
         } else {
             System.out.println("No fué posible realizar el pago, saldo insuficiente");
         }
