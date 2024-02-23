@@ -16,7 +16,7 @@ public class MomazonPaquetePremium extends Momazon implements MomazonCobrador {
      * @param precio El precio del paquete de suscripcion premium
      */
     public MomazonPaquetePremium(double precio) {
-        this.precio = 110;
+        this.precio = 150;
     }
 
     /**

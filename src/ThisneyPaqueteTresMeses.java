@@ -46,12 +46,12 @@ public class ThisneyPaqueteTresMeses extends Thisney implements ThisneyCobrador 
     @Override
     public void cobrar(Usuario usuario) {
         if(usuario.getMes(4) < 3){
-            System.out.println( usuario.getNombre() + ", se cobrará tu suscripciónn de Thisney de $130,");
-            usuario.setMes(1, (usuario.getMes(1) + 1));
+            System.out.println( usuario.getNombre() + ", se cobrará tu suscripciónn de Thisney+ de $130,");
+            System.out.println("tienes " + (3 - usuario.getMes(4)) + " mes/es para disfrutar la promoción.");
             usuario.realizarPago(usuario, precio);
-            System.out.println("aún te quedan " + (3 - usuario.getMes(1)) + " meses/es");
+            usuario.setMes(4, (usuario.getMes(4) + 1));
         } else {
-            System.out.println(usuario.getNombre() + ", tú suscripciónn de HVO_MAX con paquete gratis ha expirado.");
+            System.out.println(usuario.getNombre() + ", te recordamos que tú suscripciónn de Thisney+ con promoción\n de $130 ha expirado. Ahora pagarás $160");
             usuario.cambiarVersion();
             paqueteNormal.cobrar(usuario);
         }

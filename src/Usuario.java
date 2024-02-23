@@ -77,11 +77,6 @@ public class Usuario implements Observador{
         }
     }
 
-
-    public void agregarServicios(Servicios servicio) {
-        servicios.add(servicio);
-    }
-
     @Override
     public void actualizar(List<Usuario> usuarios) {
 
